@@ -1,0 +1,23 @@
+<!-- <input type="file" (change)="uploadFile($event)" />
+    <div>{{ uploadPercent | async }}</div>
+   
+ -->
+
+
+    <p-fileUpload 
+      auto="true"
+      name="myfile[]" 
+      accept="image/*"
+      customUpload="true" 
+      (uploadHandler)="myUploader($event)">
+    <!-- <ng-template let-file pTemplate="file">
+        <div>{{file.name}} -{{ file.size}}</div>
+    </ng-template>
+    <ng-template pTemplate="content">
+        <div *ngIf="downloadURL | async as uploadedFile">Custom UI to manage uploaded files {{uploadedFile}}</div>
+    </ng-template> -->
+    </p-fileUpload>
+    <p-progressBar [value]="uploadPercent | async"></p-progressBar>
+
+    <a [href]="downloadURL | async">{{ downloadURL | async }}</a> 
+<router-outlet></router-outlet>
